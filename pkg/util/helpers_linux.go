@@ -17,9 +17,10 @@ package util
 
 import (
 	"fmt"
-	"github.com/cobaugh/osrelease"
 	"syscall"
 	"time"
+
+	"github.com/cobaugh/osrelease"
 )
 
 const (
@@ -54,6 +55,8 @@ func getOSVersion(osReleasePath string) (string, error) {
 	case "ubuntu":
 		return getDebianVersion(osReleaseMap), nil
 	case "centos":
+		return getDebianVersion(osReleaseMap), nil
+	case "fedora":
 		return getDebianVersion(osReleaseMap), nil
 	case "rhel":
 		return getDebianVersion(osReleaseMap), nil
